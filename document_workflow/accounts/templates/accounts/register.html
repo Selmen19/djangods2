@@ -1,0 +1,12 @@
+<h2>Register</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <label for="role">Role:</label>
+    <select name="role">
+        <option value="admin">Administrator</option>
+        <option value="manager">Manager</option>
+        <option value="employee">Employee</option>
+    </select>
+    <button type="submit">Register</button>
+</form>
