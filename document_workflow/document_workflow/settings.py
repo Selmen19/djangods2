@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'accounts',
+    'documents',
     'rest_framework',
 ]
 
@@ -43,13 +44,14 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'document_workflow.urls'
 
+# settings.py
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / 'templates',  # This is the root templates directory
+            BASE_DIR / 'templates',  # Global templates directory (optional)
         ],
-        'APP_DIRS': True,
+        'APP_DIRS': True,  # This enables searching for templates in each app's 'templates' folder
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -60,6 +62,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'document_workflow.wsgi.application'
 
