@@ -36,3 +36,14 @@ class CustomUser(AbstractUser):
                 print(f"Created permission: {perm['name']}")
             else:
                 print(f"Permission already exists: {perm['name']}")
+
+class Document(models.Model):
+    user = models.ForeignKey(CustomUser, related_name='documents', on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title
+
+

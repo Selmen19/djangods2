@@ -1,6 +1,8 @@
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from .models import CustomUser
+from django.contrib.auth.models import Permission
+
 
 @receiver(post_save, sender=CustomUser)
 def assign_role_based_permissions(sender, instance, created, **kwargs):
